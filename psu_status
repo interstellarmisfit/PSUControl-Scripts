@@ -1,0 +1,10 @@
+PSUPIN=14
+ret=1
+psu=`cat /sys/class/gpio/gpio"$PSUPIN"/value`
+echo "PSU status=$psu"
+
+if [ "$psu" = "1" ]; then
+	ret=0
+fi
+
+exit $ret

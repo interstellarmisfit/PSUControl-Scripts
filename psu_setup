@@ -1,0 +1,5 @@
+# Printer Setup GPIO pins for PSU control scripts
+PSUPIN=14
+echo "$PSUPIN" > /sys/class/gpio/export
+echo "out" > /sys/class/gpio/gpio"$PSUPIN"/direction
+echo "0" > /sys/class/gpio/gpio"$PSUPIN"/value
